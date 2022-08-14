@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import {useState} from "react"
 import {Input} from "./comp/Input"
-import {Show} from "./comp/Show"
+import {Show} from "./comp/Show";
+import {Done} from "./comp/Done";
 function App() {
 
   const [todo,setTodo]=useState([]);
@@ -12,9 +13,11 @@ function App() {
     console.log(todo)
 
   }
+  const donearr = todo.filter((ele)=>ele.done===true)
+  console.log(donearr)
 
   const done=(id)=>{
-    let arr =todo.map((ele)=>ele.id==id? {...ele , done ? true : false}:ele)
+    let arr =todo.map((ele)=>ele.id==id? {...ele , done :!ele.done}:ele)
     setTodo(arr)
 
   }
@@ -23,6 +26,7 @@ function App() {
     <div className="App">
      <Input Find={Find}/>
      <Show box={todo} done={done}/>
+     <Done inp={donearr}/>
     </div>
   );
 }

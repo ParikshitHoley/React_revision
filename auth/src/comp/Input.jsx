@@ -7,6 +7,7 @@ export const Input=(prop)=>
 
     const Take=(e)=>{
         setValue(e.target.value);
+
         
 
     }
@@ -20,6 +21,7 @@ export const Input=(prop)=>
                     done:false,
                 }
                 Find(obj)
+                setValue("")
 
             }}>submit</button>
 
