@@ -1,8 +1,10 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 import React, {useState,useEffect} from 'react';
 
-export const Show=()=>{
+export const Show=({ans})=>{
     const [data,setData]=useState([]);
-    
+    const [page,setPage]=useState(1);
+     
     useEffect(()=>{
 
         // methode 1 to fetch
@@ -18,9 +20,9 @@ export const Show=()=>{
         //methode 3 to fetch
         async function find()
         {
-            let abc= await fetch("http://localhost:8700/users");
+            let abc= await fetch(`http://localhost:4500/users?_page=${page}&_limit=4`);
             abc = await abc.json();
-            setData([...data,...abc]);
+            setData([...abc]);
         }
         find();
         
@@ -28,7 +30,7 @@ export const Show=()=>{
             console.log("Iam removed")
         }
 
-    },[])
+    },[ans,page])
 
     return(
         <div>
@@ -39,8 +41,15 @@ export const Show=()=>{
                     <h3>{ele.money}</h3>
                 </div>
             })
+            
 
         }
+        <button disabled={page===1} onClick={()=>{
+            setPage((pre)=>pre-1);
+        }}>prev</button>
+        <button onClick={()=>{
+            setPage((pre)=>pre+1)
+        }}>next</button>
         </div>
     )
 }

@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import {Show} from "./comp/Show";
+
 import {useState} from "react"
+import {Input} from "./comp/Input";
+;
 function App() {
-  const [auth,setAuth] = useState(true)
+ 
   
   return (
     <div className="App">
-    {auth? <Show/> : null}
-    <button onClick={()=>{
-      setAuth(!auth)
-    }}>toggle</button>
+      <Input/>
+  
     </div>
   );
 }
