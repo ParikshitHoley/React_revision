@@ -8,7 +8,7 @@ export const PrivateComponent=({children})=>{
 
     if(!auth)
     {
-        return <Navigate to="/login" replace={false}/>;
+        return <Navigate to="/login" />;
     }
 
     return   {children};
