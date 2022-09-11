@@ -1,0 +1,22 @@
+{
+  "todolist": [
+    {
+      "task": "learn react",
+      "date": "2022-09-14",
+      "status": "true",
+      "id": 1
+    },
+    {
+      "task": "learn redux",
+      "date": "2022-09-15",
+      "status": "false",
+      "id": 2
+    },
+    {
+      "task": "learn todo",
+      "date": "2022-09-14",
+      "status": "true",
+      "id": 3
+    }
+  ]
+}
