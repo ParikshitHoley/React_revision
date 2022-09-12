@@ -16,10 +16,13 @@ function Countries() {
   console.log(data)
 
   useEffect(()=>{
+    
     getData();
+    
 
   },[page])
   const getData=async()=>{
+    setDone(true)
     let data1= await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries?page=${page}&limit=10&orderBy=desc`)
     let res = await data1.json();
     setData(res.data);
@@ -40,7 +43,8 @@ function Countries() {
         <h1 data-testid="countries-header">Countries List</h1>
         <div data-testid="countries-container">
           {/* Countries Card */}
-          <CountriesCard data={data}/>
+          {/* <CountriesCard data={data}/> */}
+          {data.map(({country,population,id})=> <CountriesCard country={country} population={population} id={id} />  )}
         </div>
         <div>
           {/* Pagination */}
