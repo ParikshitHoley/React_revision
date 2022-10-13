@@ -4,11 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ContextComponent } from './Component/Contextapi';
+import {StyleContextComponent} from "./Component/StyleContext";
+import {BrowserRouter} from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <BrowserRouter>
   <ContextComponent>
-   <App />
+    <StyleContextComponent>
+    <App />
+    </StyleContextComponent>
   </ContextComponent>
+  </BrowserRouter>
+  
    
  
 );

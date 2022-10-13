@@ -1,6 +1,6 @@
 
-export default function Image({title,src,alt,width,height}){
-  
+export default function Image(props){
+  const {title,src,alt,width,height} =props
   return(
     <div>
       <h2>{title}</h2>

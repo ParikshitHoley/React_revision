@@ -1,7 +1,8 @@
 import { isDisabled } from '@testing-library/user-event/dist/utils';
 import React, {useState,useEffect} from 'react';
 
-export const Show=({ans})=>{
+export const Show=(props)=>{
+    const {ans="masai"} =props;
     const [data,setData]=useState([]);
     const [page,setPage]=useState(1);
      
@@ -53,3 +54,4 @@ export const Show=({ans})=>{
         </div>
     )
 }
+
