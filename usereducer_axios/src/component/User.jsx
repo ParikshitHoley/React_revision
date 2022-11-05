@@ -4,7 +4,7 @@ import {LOADING,GETDATA,SUCESS,ERROR} from "../Reducer"
 
 export const User=({state,dispatch})=>{
     console.log(state)
-     //const [data,setData] = useState([]);
+     
     const [sort,setSort]=useState("");
     useEffect(()=>{
         dispatch({type : LOADING ,payload :"loading"})

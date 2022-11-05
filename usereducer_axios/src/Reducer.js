@@ -29,5 +29,17 @@ export const initialstate={
 
  }
 
-
  
+
+//  axios.patch("url/id",{
+//     status: !status
+//  })
+
+//  {
+//     "posts":[
+//         {"id":1, status: "true"},
+//         {
+//             "id":2, status: "true"
+//         }
+//     ]
+//  }
